@@ -123,7 +123,7 @@ app.get('/complaints/',authenticateToken,async(request,response)=>{
   const {payLoad}=request;
   const {type}=payLoad;
   if(type==="Student" || type==="Faculty"){
-    const getUsersQuery=`SELECT department,title,description,time_and_date,status,filename,filetype,filesize,filedata FROM complaints;`;
+    const getUsersQuery=`SELECT s_no,department,title,description,time_and_date,status,filename,filetype,filesize,filedata FROM complaints;`;
     const complaints=await db.all(getUsersQuery);
     response.send(complaints);
   }
@@ -163,19 +163,27 @@ app.post('/complaints/',authenticateToken,async(request,response)=>{
 
 //Update Complaint Status
 
-app.put('/complaints/:complaintId/',authenticateToken,async(request,response)=>{
-  const {payLoad}=request;
-  const {type,email}=payLoad;
-  const {status}=request.body;
+app.put('/complaints/:complaintId/', authenticateToken, async (request, response) => {
+  const { payLoad } = request;
+  const { type, email } = payLoad;
+  const { complaintId } = request.params;
 
-  if(type==="Admin" && email===`${email}`){
-    const {complaintId}=request.params;
-    const {status}=request.body;
-    
-  }
+  const getComplaintQuery = `SELECT email FROM complaints WHERE s_no = '${complaintId}';`;
+  const complaint = await db.get(getComplaintQuery);
+  if (complaint !== undefined){
+    if(type === "Admin" || complaint.email === email) {
+      const updateComplaintStatusQuery = `UPDATE complaints SET status = '1' WHERE s_no = '${complaintId}';`;
+      await db.run(updateComplaintStatusQuery);
+      response.send("Complaint Status Updated");
+    } 
+    else{
+      response.status(400);
+      response.send("Only Admin or Complaint Owner can update.");
+    }
+  } 
   else{
-    response.send("Invalid User");
-    response.status(401);
+    response.status(400);
+    response.send("Complaint not Found");
   }
 });
 

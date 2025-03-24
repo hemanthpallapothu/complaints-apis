@@ -2,12 +2,12 @@ POST http://localhost:3000/register/
 Content-Type: application/json
 
 {
-    "first_name": "Narendra Damodardas",
-    "last_name": "Modi",
-    "email": "narendra@sasi.ac.in",
-    "register": "PM 15",
-    "password": "Modi@123",
-    "type": "Admin"
+    "first_name": "Sardhaar vallabhai",
+    "last_name": "Patel",
+    "email": "sardhaar@sasi.ac.in",
+    "register": "Polo 1",
+    "password": "Sardhaar@123",
+    "type": "Student"
 }
 
 ###
@@ -16,46 +16,40 @@ POST http://localhost:3000/login/
 Content-Type: application/json
 
 {
-    "email": "narendra@sasi.ac.in",
-    "password": "Modi@123" 
+    "email": "trump@sasi.ac.in",
+    "password": "Trump@123" 
 }
 
 ###
 
 GET http://localhost:3000/admin/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hcmVuZHJhQHNhc2kuYWMuaW4iLCJyZWdObyI6IlBNIDE1IiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzQyODA4Mzk2fQ.Nl-AsewkjhPTx3l-t0R2Z8p59DU9Pen1S5Mv8NXuA8c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRydW1wQHNhc2kuYWMuaW4iLCJyZWdObyI6IjIySzYxNDQ2OSIsInR5cGUiOiJTdHVkZW50IiwiaWF0IjoxNzQyODE5NTQ3fQ.4UbalO3pazL75MeEW_thX_bq4srViNkFYXly23wPC8Q
 
 ###
 
 GET http://localhost:3000/complaints/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlzamFnYW5Ac2FzaS5hYy5pbiIsInJlZ05vIjoiQ00gMSIsInR5cGUiOiJGYWN1bHR5IiwiaWF0IjoxNzQyODA2NzIzfQ.xPwwEVmdG1lVbU3DbWx7kANivTzKE1R9sD03ffqZ1oY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRydW1wQHNhc2kuYWMuaW4iLCJyZWdObyI6IjIySzYxNDQ2OSIsInR5cGUiOiJTdHVkZW50IiwiaWF0IjoxNzQyODEyMzc5fQ.jgICR_p_eLSL_XOMzrHGy0rYxDqjK3eJbrz8hz0NGzA
 
 ###
 
 POST http://localhost:3000/complaints/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlzamFnYW5Ac2FzaS5hYy5pbiIsInJlZ05vIjoiQ00gMSIsInR5cGUiOiJGYWN1bHR5IiwiaWF0IjoxNzQyODA2NzIzfQ.xPwwEVmdG1lVbU3DbWx7kANivTzKE1R9sD03ffqZ1oY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRydW1wQHNhc2kuYWMuaW4iLCJyZWdObyI6IjIySzYxNDQ2OSIsInR5cGUiOiJTdHVkZW50IiwiaWF0IjoxNzQyODEyMzc5fQ.jgICR_p_eLSL_XOMzrHGy0rYxDqjK3eJbrz8hz0NGzA
 Content-Type: application/json
 
 {
-  "department": "Electrical",
-  "title": "Power Fluctuation in Work Area",
-  "description": "Frequent power fluctuations are affecting workstation computers and equipment.",
+  "department": "Data Science",
+  "title": "Harsha is too bad ",
+  "description": "Tooooooooooo worest",
   "time_and_date": "2025-03-24 13:30:00",
   "status": 0,
   "filename": "voltage_report.pdf",
   "filetype": "application/pdf",
   "filesize": "750KB",
   "filedata": "base64_encoded_file_data",
-  "email": "ysjagan@sasi.ac.in"
+  "email": "trump@sasi.ac.in"
 }
 
 ###
 
-PUT http://localhost:3000/complaints/18/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlzamFnYW5Ac2FzaS5hYy5pbiIsInJlZ05vIjoiQ00gMSIsInR5cGUiOiJGYWN1bHR5IiwiaWF0IjoxNzQyODA2NzIzfQ.xPwwEVmdG1lVbU3DbWx7kANivTzKE1R9sD03ffqZ1oY
-Content-Type: application/json
-
-{
-    "status": 1,
-    "email": "ysjagan@sasi.ac.in"
-}
+PUT http://localhost:3000/complaints/20/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRydW1wQHNhc2kuYWMuaW4iLCJyZWdObyI6IjIySzYxNDQ2OSIsInR5cGUiOiJTdHVkZW50IiwiaWF0IjoxNzQyODE5NTQ3fQ.4UbalO3pazL75MeEW_thX_bq4srViNkFYXly23wPC8Q
