@@ -1,0 +1,61 @@
+POST http://localhost:3000/register/
+Content-Type: application/json
+
+{
+    "first_name": "Narendra Damodardas",
+    "last_name": "Modi",
+    "email": "narendra@sasi.ac.in",
+    "register": "PM 15",
+    "password": "Modi@123",
+    "type": "Admin"
+}
+
+###
+
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+    "email": "narendra@sasi.ac.in",
+    "password": "Modi@123" 
+}
+
+###
+
+GET http://localhost:3000/admin/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hcmVuZHJhQHNhc2kuYWMuaW4iLCJyZWdObyI6IlBNIDE1IiwidHlwZSI6IkFkbWluIiwiaWF0IjoxNzQyODA4Mzk2fQ.Nl-AsewkjhPTx3l-t0R2Z8p59DU9Pen1S5Mv8NXuA8c
+
+###
+
+GET http://localhost:3000/complaints/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlzamFnYW5Ac2FzaS5hYy5pbiIsInJlZ05vIjoiQ00gMSIsInR5cGUiOiJGYWN1bHR5IiwiaWF0IjoxNzQyODA2NzIzfQ.xPwwEVmdG1lVbU3DbWx7kANivTzKE1R9sD03ffqZ1oY
+
+###
+
+POST http://localhost:3000/complaints/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlzamFnYW5Ac2FzaS5hYy5pbiIsInJlZ05vIjoiQ00gMSIsInR5cGUiOiJGYWN1bHR5IiwiaWF0IjoxNzQyODA2NzIzfQ.xPwwEVmdG1lVbU3DbWx7kANivTzKE1R9sD03ffqZ1oY
+Content-Type: application/json
+
+{
+  "department": "Electrical",
+  "title": "Power Fluctuation in Work Area",
+  "description": "Frequent power fluctuations are affecting workstation computers and equipment.",
+  "time_and_date": "2025-03-24 13:30:00",
+  "status": 0,
+  "filename": "voltage_report.pdf",
+  "filetype": "application/pdf",
+  "filesize": "750KB",
+  "filedata": "base64_encoded_file_data",
+  "email": "ysjagan@sasi.ac.in"
+}
+
+###
+
+PUT http://localhost:3000/complaints/18/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlzamFnYW5Ac2FzaS5hYy5pbiIsInJlZ05vIjoiQ00gMSIsInR5cGUiOiJGYWN1bHR5IiwiaWF0IjoxNzQyODA2NzIzfQ.xPwwEVmdG1lVbU3DbWx7kANivTzKE1R9sD03ffqZ1oY
+Content-Type: application/json
+
+{
+    "status": 1,
+    "email": "ysjagan@sasi.ac.in"
+}
